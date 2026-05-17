@@ -1,0 +1,31 @@
+{
+  "name": "Testimony",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the person sharing the testimony"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address (optional)"
+    },
+    "title": {
+      "type": "string",
+      "description": "Testimony title"
+    },
+    "story": {
+      "type": "string",
+      "description": "The testimony story"
+    },
+    "permission_to_share": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the testimony can be shared publicly"
+    }
+  },
+  "required": [
+    "title",
+    "story"
+  ]
+}

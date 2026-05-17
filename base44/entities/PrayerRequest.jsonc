@@ -1,0 +1,57 @@
+{
+  "name": "PrayerRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the person submitting the request"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address (optional)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Healing",
+        "Family",
+        "Finances",
+        "Salvation",
+        "Deliverance",
+        "Direction",
+        "Grief",
+        "Fear / Anxiety",
+        "Restoration",
+        "Other"
+      ],
+      "description": "Prayer category"
+    },
+    "request_text": {
+      "type": "string",
+      "description": "The prayer request content"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "private"
+      ],
+      "default": "public",
+      "description": "Whether the request is public or private"
+    },
+    "urgent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is an urgent prayer request"
+    },
+    "prayed_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of times people have prayed for this request"
+    }
+  },
+  "required": [
+    "category",
+    "request_text"
+  ]
+}

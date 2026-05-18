@@ -10,9 +10,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2, Send } from "lucide-react";
 import PageBackground from "@/components/shared/PageBackground";
+import SectionHeading from "@/components/shared/SectionHeading";
 
 const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/d939edcfa_03-submit-prayer-lion-guardianpng.png";
-import SectionHeading from "@/components/shared/SectionHeading";
 
 const categories = [
   "Healing", "Family", "Finances", "Salvation", "Deliverance",

@@ -7,6 +7,7 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 
 import AppLayout from '@/components/layout/AppLayout';
+import ErrorBoundary from '@/components/ErrorBoundary';
 import Home from '@/pages/Home';
 import SubmitPrayer from '@/pages/SubmitPrayer';
 import PrayerWall from '@/pages/PrayerWall';
@@ -37,19 +38,21 @@ const AuthenticatedApp = () => {
   }
 
   return (
-    <Routes>
-      <Route element={<AppLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/submit-prayer" element={<SubmitPrayer />} />
-        <Route path="/prayer-wall" element={<PrayerWall />} />
-        <Route path="/testimonies" element={<ShareTestimony />} />
-        <Route path="/answered-prayers" element={<AnsweredPrayers />} />
-        <Route path="/prayer-topics" element={<PrayerTopics />} />
-        <Route path="/encouragement" element={<Encouragement />} />
-        <Route path="/about" element={<About />} />
-      </Route>
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <ErrorBoundary>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<ErrorBoundary><Home /></ErrorBoundary>} />
+          <Route path="/submit-prayer" element={<ErrorBoundary><SubmitPrayer /></ErrorBoundary>} />
+          <Route path="/prayer-wall" element={<ErrorBoundary><PrayerWall /></ErrorBoundary>} />
+          <Route path="/testimonies" element={<ErrorBoundary><ShareTestimony /></ErrorBoundary>} />
+          <Route path="/answered-prayers" element={<ErrorBoundary><AnsweredPrayers /></ErrorBoundary>} />
+          <Route path="/prayer-topics" element={<ErrorBoundary><PrayerTopics /></ErrorBoundary>} />
+          <Route path="/encouragement" element={<ErrorBoundary><Encouragement /></ErrorBoundary>} />
+          <Route path="/about" element={<ErrorBoundary><About /></ErrorBoundary>} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </ErrorBoundary>
   );
 };
 

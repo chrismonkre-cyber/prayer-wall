@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ShieldAlert, Heart, Compass, CloudRain, Swords, Shield, Flower2 } from "lucide-react";
 import PageBackground from "@/components/shared/PageBackground";
-
-const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/0f2fd0ae0_07-encouragement-golden-light-glorypng.png";
 import SectionHeading from "@/components/shared/SectionHeading";
 import RoyalCard from "@/components/shared/RoyalCard";
+
+const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/0f2fd0ae0_07-encouragement-golden-light-glorypng.png";
 
 const cards = [
   {

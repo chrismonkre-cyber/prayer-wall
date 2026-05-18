@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { Crown, Globe, BookOpen, Youtube, Mail, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageBackground from "@/components/shared/PageBackground";
-
-const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/20a44699d_08-about-divine-grandeurpng.png";
 import SectionHeading from "@/components/shared/SectionHeading";
 import RoyalCard from "@/components/shared/RoyalCard";
+
+const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/20a44699d_08-about-divine-grandeurpng.png";
 
 const links = [
   { label: "Main Ministry Site",    href: "https://kingdommandateministry.com",            icon: Globe,     description: "Visit Kingdom Mandate Ministry" },

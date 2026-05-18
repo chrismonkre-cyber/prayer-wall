@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Heart, Users, DollarSign, Flame, ShieldCheck, Compass, CloudRain, ShieldAlert, RefreshCw, Zap } from "lucide-react";
 import PageBackground from "@/components/shared/PageBackground";
-
-const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/ac1cc23b9_06-prayer-topics-bible-scrollpng.png";
 import SectionHeading from "@/components/shared/SectionHeading";
 import RoyalCard from "@/components/shared/RoyalCard";
+
+const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/ac1cc23b9_06-prayer-topics-bible-scrollpng.png";
 
 const topics = [
   { title: "Healing",          icon: Heart,      scripture: "Isaiah 53:5",       encouragement: "God is Jehovah Rapha — the Lord who heals. He has not changed.", prayer: "Lord Jesus, release Your healing power and restore what is broken. Strengthen faith, renew hope, and bring peace in Jesus' name. Amen." },

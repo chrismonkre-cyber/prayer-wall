@@ -8,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import PageBackground from "@/components/shared/PageBackground";
+import SectionHeading from "@/components/shared/SectionHeading";
 
 const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/72eb13a95_04-share-testimony-celestial-glorypng.png";
-import SectionHeading from "@/components/shared/SectionHeading";
 
 const CSS = `
 @keyframes altarGlow {

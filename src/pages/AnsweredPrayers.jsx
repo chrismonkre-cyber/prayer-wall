@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { format } from "date-fns";
 import { Sparkles, Clock } from "lucide-react";
 import PageBackground from "@/components/shared/PageBackground";
-
-const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/e5cf41af7_05-testimonies-golden-throne-skiespng.png";
 import SectionHeading from "@/components/shared/SectionHeading";
 import RoyalCard from "@/components/shared/RoyalCard";
+
+const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/e5cf41af7_05-testimonies-golden-throne-skiespng.png";
 
 function TestimonyCard({ testimony, index }) {
   return (
@@ -47,10 +47,11 @@ function TestimonyCard({ testimony, index }) {
 }
 
 export default function AnsweredPrayers() {
-  const { data: testimonies = [], isLoading } = useQuery({
+  const { data: rawTestimonies, isLoading, isError } = useQuery({
     queryKey: ["publicTestimonies"],
     queryFn: () => base44.entities.Testimony.filter({ permission_to_share: true }, "-created_date", 100),
   });
+  const testimonies = Array.isArray(rawTestimonies) ? rawTestimonies : [];
 
   return (
     <div className="relative min-h-screen py-20">
@@ -65,6 +66,12 @@ export default function AnsweredPrayers() {
           <div className="flex justify-center py-20">
             <div className="w-8 h-8 border-2 border-t-[#d4a030] rounded-full animate-spin" style={{ borderColor: "rgba(212,160,48,0.25)", borderTopColor: "#d4a030" }} />
           </div>
+        ) : isError ? (
+          <div className="text-center py-20">
+            <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
+              We could not load testimonies right now. Please try again shortly.
+            </p>
+          </div>
         ) : testimonies.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
@@ -74,7 +81,9 @@ export default function AnsweredPrayers() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {testimonies.map((testimony, i) => (
-              <TestimonyCard key={testimony.id} testimony={testimony} index={i} />
+              testimony && testimony.id
+                ? <TestimonyCard key={testimony.id} testimony={testimony} index={i} />
+                : null
             ))}
           </div>
         )}

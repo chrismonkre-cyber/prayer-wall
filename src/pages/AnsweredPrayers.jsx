@@ -10,6 +10,13 @@ import RoyalCard from "@/components/shared/RoyalCard";
 
 const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/e5cf41af7_05-testimonies-golden-throne-skiespng.png";
 
+const fallbackTestimonies = [
+  { id: "ft-1", name: "Anonymous", title: "God Gave Me Peace Again", story: "I was carrying fear and anxiety, but after prayer I felt the peace of God settle over my heart. I am still walking through the process, but I know the Lord is with me and I am not alone.", approved: true, isPublic: true, permission_to_share: true, created_date: "2026-02-01T10:00:00Z" },
+  { id: "ft-2", name: "Sarah", title: "Strength in a Difficult Season", story: "I asked for prayer during a very hard season with my family. God gave me strength, wisdom, and peace one day at a time. I can see His hand working even before everything is fully resolved.", approved: true, isPublic: true, permission_to_share: true, created_date: "2026-02-05T10:00:00Z" },
+  { id: "ft-3", name: "David", title: "Provision at the Right Time", story: "I was believing God for direction and provision, and He opened a door I did not expect. It reminded me that the Lord sees every need and knows exactly when to move.", approved: true, isPublic: true, permission_to_share: true, created_date: "2026-02-10T10:00:00Z" },
+  { id: "ft-4", name: "Rebecca", title: "Hope Restored", story: "I felt discouraged and worn down, but through prayer and encouragement, my hope began to rise again. God reminded me that He restores, strengthens, and finishes what He starts.", approved: true, isPublic: true, permission_to_share: true, created_date: "2026-02-15T10:00:00Z" },
+];
+
 function TestimonyCard({ testimony, index }) {
   return (
     <motion.div
@@ -51,7 +58,8 @@ export default function AnsweredPrayers() {
     queryKey: ["publicTestimonies"],
     queryFn: () => base44.entities.Testimony.filter({ approved: true, isPublic: true }, "-created_date", 100),
   });
-  const testimonies = Array.isArray(rawTestimonies) ? rawTestimonies : [];
+  const liveTestimonies = Array.isArray(rawTestimonies) ? rawTestimonies : [];
+  const testimonies = liveTestimonies.length > 0 ? liveTestimonies : fallbackTestimonies;
 
   return (
     <div className="relative min-h-screen py-20">

@@ -24,6 +24,19 @@ const categories = [
   "Direction", "Grief", "Fear / Anxiety", "Restoration", "Other"
 ];
 
+const fallbackPrayers = [
+  { id: "fb-1", category: "Healing", name: "Sarah", request_text: "Please pray for my mother who is battling cancer. We believe in God's healing power and ask for strength and peace for our family during this time.", visibility: "public", approved: true, urgent: true, prayed_count: 13, created_date: "2026-01-10T10:00:00Z" },
+  { id: "fb-2", category: "Family", name: "Grace", request_text: "Please pray for peace, unity, and restoration in my family. I am believing God to heal hearts and bring us closer together.", visibility: "public", approved: true, urgent: false, prayed_count: 21, created_date: "2026-01-12T10:00:00Z" },
+  { id: "fb-3", category: "Finances", name: "David", request_text: "I lost my job last month and have been struggling to provide for my family. Asking for God's provision and an open door for employment.", visibility: "public", approved: true, urgent: true, prayed_count: 16, created_date: "2026-01-14T10:00:00Z" },
+  { id: "fb-4", category: "Salvation", name: "Anonymous", request_text: "Praying for my husband to come to know the Lord. He has been resistant for years, but I believe God is softening his heart. Please agree with me in prayer.", visibility: "public", approved: true, urgent: false, prayed_count: 9, created_date: "2026-01-16T10:00:00Z" },
+  { id: "fb-5", category: "Deliverance", name: "Michael", request_text: "Please pray for freedom from every stronghold and for God's peace to fill my mind and home. I believe Jesus is able to break every chain.", visibility: "public", approved: true, urgent: false, prayed_count: 14, created_date: "2026-01-18T10:00:00Z" },
+  { id: "fb-6", category: "Direction", name: "Grace", request_text: "I'm at a crossroads in my life and need God's clear guidance. Praying for wisdom and peace about a major decision regarding ministry.", visibility: "public", approved: true, urgent: false, prayed_count: 7, created_date: "2026-01-20T10:00:00Z" },
+  { id: "fb-7", category: "Grief", name: "Anonymous", request_text: "Please pray for comfort after the loss of someone I love. I need God's strength, peace, and hope for the days ahead.", visibility: "public", approved: true, urgent: false, prayed_count: 22, created_date: "2026-01-22T10:00:00Z" },
+  { id: "fb-8", category: "Fear / Anxiety", name: "Olivia", request_text: "Please pray for peace over my mind and freedom from fear. I want to trust God fully and rest in His presence.", visibility: "public", approved: true, urgent: false, prayed_count: 11, created_date: "2026-01-24T10:00:00Z" },
+  { id: "fb-9", category: "Restoration", name: "Rebecca", request_text: "Please pray for restoration in my family and for hearts to soften. I am believing God to heal what has been broken.", visibility: "public", approved: true, urgent: false, prayed_count: 18, created_date: "2026-01-26T10:00:00Z" },
+  { id: "fb-10", category: "Other", name: "Daniel", request_text: "Please pray for wisdom, strength, and clear direction in this season. I want to follow God's will and walk in obedience.", visibility: "public", approved: true, urgent: false, prayed_count: 11, created_date: "2026-01-28T10:00:00Z" },
+];
+
 export default function PrayerWall() {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -32,7 +45,8 @@ export default function PrayerWall() {
     queryFn: () => base44.entities.PrayerRequest.filter({ visibility: "public", approved: true }, "-created_date", 100),
   });
 
-  const prayers = Array.isArray(rawPrayers) ? rawPrayers : [];
+  const livePrayers = Array.isArray(rawPrayers) ? rawPrayers : [];
+  const prayers = livePrayers.length > 0 ? livePrayers : fallbackPrayers;
 
   const filtered = activeCategory === "All"
     ? prayers

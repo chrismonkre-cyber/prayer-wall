@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { base44 } from "@/api/base44Client";
 import { useQuery } from "@tanstack/react-query";
 import PageBackground from "@/components/shared/PageBackground";
-
-const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/60084b8ee_02-prayer-wall-golden-temple-lightpng.png";
 import SectionHeading from "@/components/shared/SectionHeading";
 import ScriptureQuote from "@/components/shared/ScriptureQuote";
 import PrayerCard from "@/components/prayer/PrayerCard";
+
+const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/60084b8ee_02-prayer-wall-golden-temple-lightpng.png";
 
 const CSS = `
 @keyframes filterPanelPulse {
@@ -27,14 +27,16 @@ const categories = [
 export default function PrayerWall() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const { data: prayers = [], isLoading } = useQuery({
+  const { data: rawPrayers, isLoading, isError } = useQuery({
     queryKey: ["publicPrayers"],
     queryFn: () => base44.entities.PrayerRequest.filter({ visibility: "public" }, "-created_date", 100),
   });
 
+  const prayers = Array.isArray(rawPrayers) ? rawPrayers : [];
+
   const filtered = activeCategory === "All"
     ? prayers
-    : prayers.filter((p) => p.category === activeCategory);
+    : prayers.filter((p) => p && p.category === activeCategory);
 
   return (
     <div className="relative min-h-screen py-20">
@@ -130,16 +132,24 @@ export default function PrayerWall() {
           <div className="flex justify-center py-20">
             <div className="w-8 h-8 rounded-full animate-spin" style={{ border: "2px solid rgba(212,160,48,0.25)", borderTopColor: "#d4a030" }} />
           </div>
+        ) : isError ? (
+          <div className="text-center py-20">
+            <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
+              We could not load the Prayer Wall right now. Please try again shortly.
+            </p>
+          </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
-              No prayer requests yet. Be the first to submit one.
+              No public prayer requests yet. Be the first to submit one.
             </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filtered.map((prayer, i) => (
-              <PrayerCard key={prayer.id} prayer={prayer} index={i} />
+              prayer && prayer.id
+                ? <PrayerCard key={prayer.id} prayer={prayer} index={i} />
+                : null
             ))}
           </div>
         )}

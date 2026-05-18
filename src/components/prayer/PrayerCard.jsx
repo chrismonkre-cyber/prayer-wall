@@ -23,11 +23,13 @@ const encouragements = [
 ];
 
 export default function PrayerCard({ prayer, index }) {
-  const [prayedCount, setPrayedCount] = useState(prayer.prayed_count || 0);
+  const [prayedCount, setPrayedCount] = useState(prayer?.prayed_count || 0);
   const [hasPrayed, setHasPrayed] = useState(false);
 
+  if (!prayer || !prayer.id) return null;
+
   const handlePrayed = async () => {
-    if (hasPrayed) return;
+    if (hasPrayed || !prayer.id) return;
     const newCount = prayedCount + 1;
     setPrayedCount(newCount);
     setHasPrayed(true);

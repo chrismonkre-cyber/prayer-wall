@@ -21,7 +21,17 @@
     "permission_to_share": {
       "type": "boolean",
       "default": false,
-      "description": "Whether the testimony can be shared publicly"
+      "description": "Whether the submitter gave permission to share"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Admin-approved for public display"
+    },
+    "isPublic": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the testimony is publicly visible"
     }
   },
   "required": [

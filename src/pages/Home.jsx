@@ -137,7 +137,7 @@ export default function Home() {
                 View Prayer Wall
               </button>
             </Link>
-            <Link to="/testimonies" className="w-full sm:w-auto">
+            <Link to="/share-testimony" className="w-full sm:w-auto">
               <button
                 className="w-full font-heading text-xs sm:text-sm tracking-widest flex items-center justify-center gap-2"
                 style={{

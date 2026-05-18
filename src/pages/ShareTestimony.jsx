@@ -44,7 +44,11 @@ export default function ShareTestimony() {
     e.preventDefault();
     if (!form.title || !form.story) return;
     setLoading(true);
-    await base44.entities.Testimony.create(form);
+    await base44.entities.Testimony.create({
+      ...form,
+      approved: false,
+      isPublic: false,
+    });
     setLoading(false);
     setSubmitted(true);
   };

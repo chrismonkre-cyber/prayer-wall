@@ -44,7 +44,8 @@ const AuthenticatedApp = () => {
           <Route path="/" element={<ErrorBoundary><Home /></ErrorBoundary>} />
           <Route path="/submit-prayer" element={<ErrorBoundary><SubmitPrayer /></ErrorBoundary>} />
           <Route path="/prayer-wall" element={<ErrorBoundary><PrayerWall /></ErrorBoundary>} />
-          <Route path="/testimonies" element={<ErrorBoundary><ShareTestimony /></ErrorBoundary>} />
+          <Route path="/testimonies" element={<ErrorBoundary><AnsweredPrayers /></ErrorBoundary>} />
+          <Route path="/share-testimony" element={<ErrorBoundary><ShareTestimony /></ErrorBoundary>} />
           <Route path="/answered-prayers" element={<ErrorBoundary><AnsweredPrayers /></ErrorBoundary>} />
           <Route path="/prayer-topics" element={<ErrorBoundary><PrayerTopics /></ErrorBoundary>} />
           <Route path="/encouragement" element={<ErrorBoundary><Encouragement /></ErrorBoundary>} />

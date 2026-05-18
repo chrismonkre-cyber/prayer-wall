@@ -49,7 +49,7 @@ function TestimonyCard({ testimony, index }) {
 export default function AnsweredPrayers() {
   const { data: rawTestimonies, isLoading, isError } = useQuery({
     queryKey: ["publicTestimonies"],
-    queryFn: () => base44.entities.Testimony.filter({ permission_to_share: true }, "-created_date", 100),
+    queryFn: () => base44.entities.Testimony.filter({ approved: true, isPublic: true }, "-created_date", 100),
   });
   const testimonies = Array.isArray(rawTestimonies) ? rawTestimonies : [];
 
@@ -75,7 +75,7 @@ export default function AnsweredPrayers() {
         ) : testimonies.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
-              No testimonies yet. Be the first to share what God has done!
+              No testimonies have been shared yet. Be the first to share what God has done.
             </p>
           </div>
         ) : (

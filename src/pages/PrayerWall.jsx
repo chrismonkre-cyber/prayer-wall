@@ -29,7 +29,7 @@ export default function PrayerWall() {
 
   const { data: rawPrayers, isLoading, isError } = useQuery({
     queryKey: ["publicPrayers"],
-    queryFn: () => base44.entities.PrayerRequest.filter({ visibility: "public" }, "-created_date", 100),
+    queryFn: () => base44.entities.PrayerRequest.filter({ visibility: "public", approved: true }, "-created_date", 100),
   });
 
   const prayers = Array.isArray(rawPrayers) ? rawPrayers : [];
@@ -83,6 +83,7 @@ export default function PrayerWall() {
             <div style={{
               position: "absolute", top: 0, left: "8%", right: "8%", height: "1px",
               background: "linear-gradient(to right, transparent, rgba(255,220,80,0.80), transparent)",
+              pointerEvents: "none",
             }} />
             {/* inner fire glow */}
             <div style={{
@@ -141,7 +142,9 @@ export default function PrayerWall() {
         ) : filtered.length === 0 ? (
           <div className="text-center py-20">
             <p className="font-body text-sm" style={{ color: "rgba(185,155,105,0.68)" }}>
-              No public prayer requests yet. Be the first to submit one.
+              {activeCategory === "All"
+                ? "No public prayer requests yet. Be the first to submit one."
+                : `No public prayer requests in this category yet. Be the first to submit one.`}
             </p>
           </div>
         ) : (

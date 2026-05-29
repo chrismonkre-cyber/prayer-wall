@@ -1,0 +1,22 @@
+{
+  "name": "Kingdom Prayer Wall",
+  "short_name": "Prayer Wall",
+  "description": "Submit prayer requests. Stand in agreement. Celebrate answered prayer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#120405",
+  "theme_color": "#d4944a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

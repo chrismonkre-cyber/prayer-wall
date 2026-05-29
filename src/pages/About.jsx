@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Crown, Globe, BookOpen, Youtube, Mail, Heart } from "lucide-react";
+import { Crown, Globe, BookOpen, Youtube, Mail, Heart, Flame, Map, BookMarked, Sparkles, Star, Gift, Shield, Zap, Users, ShoppingBag, Unlock, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageBackground from "@/components/shared/PageBackground";
 import SectionHeading from "@/components/shared/SectionHeading";
@@ -9,17 +9,32 @@ import RoyalCard from "@/components/shared/RoyalCard";
 const BG = "https://media.base44.com/images/public/6a088d4305ad1c2a40626604/20a44699d_08-about-divine-grandeurpng.png";
 
 const links = [
-  { label: "Main Ministry Site",    href: "https://kingdommandateministry.com",            icon: Globe,     description: "Visit Kingdom Mandate Ministry" },
-  { label: "The Bible Companion",   href: "https://thebiblecompanion.online",              icon: BookOpen,  description: "Study the Word with our Bible tool" },
-  { label: "YouTube Channel",       href: "https://www.youtube.com/@KingdomMandateMinistry",icon: Youtube,   description: "Watch teachings and worship" },
-  { label: "Contact / Prayer Email",href: "mailto:kingdommm.chris@gmail.com",              icon: Mail,      description: "Reach the ministry team directly" },
+  { label: "Main Ministry Site",        href: "https://kingdommandateministry.com",                                                    icon: Globe,      description: "The heart of Kingdom Mandate Ministry" },
+  { label: "The Bible Companion",       href: "https://thebiblecompanion.online",                                                     icon: BookOpen,   description: "Study the Word with our Bible tool" },
+  { label: "Kingdom Prayer Wall",       href: "https://prayer.kingdommandateministry.com",                                           icon: Heart,      description: "Bring your prayers before the throne" },
+  { label: "Kingdom Fire",              href: "https://fire.kingdommandateministry.com",                                             icon: Flame,      description: "Ignite your spiritual fire" },
+  { label: "Kingdom Pathway",           href: "https://pathway.kingdommandateministry.com",                                         icon: Map,        description: "Discover your Kingdom path" },
+  { label: "Kingdom Declarations",      href: "https://declarations.kingdommandateministry.com",                                    icon: BookMarked, description: "Declare the Word over your life" },
+  { label: "Kingdom Healing Room",      href: "https://healing.kingdommandateministry.com",                                        icon: Sparkles,   description: "Receive healing by His stripes" },
+  { label: "Kingdom Purpose Finder",    href: "https://purpose.kingdommandateministry.com",                                        icon: Star,       description: "Discover your God-given purpose" },
+  { label: "Kingdom Identity",          href: "https://identity.kingdommandateministry.com",                                       icon: Crown,      description: "Know who you are in Christ" },
+  { label: "Kingdom Gift Finder",       href: "https://gifts.kingdommandateministry.com",                                          icon: Gift,       description: "Identify your spiritual gifts" },
+  { label: "Kingdom Battle Plan",       href: "https://battle.kingdommandateministry.com",                                         icon: Shield,     description: "Equip yourself for spiritual warfare" },
+  { label: "Kingdom Grace Vault",       href: "https://grace.kingdommandateministry.com",                                          icon: Lightbulb,  description: "Walk in the abundance of grace" },
+  { label: "Kingdom Revival Fire",      href: "https://revival.kingdommandateministry.com",                                        icon: Zap,        description: "Fan the flame of revival" },
+  { label: "Kingdom Family Altar",      href: "https://family.kingdommandateministry.com",                                         icon: Users,      description: "Build your family on Kingdom foundations" },
+  { label: "Kingdom Marketplace Mandate", href: "https://marketplace.kingdommandateministry.com",                                 icon: ShoppingBag, description: "Bring the Kingdom into business" },
+  { label: "Kingdom Freedom",           href: "https://freedom.kingdommandateministry.com",                                        icon: Unlock,     description: "Walk in freedom through Christ" },
+  { label: "YouTube Channel",           href: "https://www.youtube.com/@KingdomMandateMinistry",                                   icon: Youtube,    description: "Watch teachings and worship" },
+  { label: "Contact",                   href: "mailto:kingdommm.chris@gmail.com",                                                   icon: Mail,       description: "Reach the ministry team directly" },
+  { label: "Partner / Sow",             href: "https://www.paypal.com/donate/?business=kingdommm.chris%40gmail.com",               icon: Heart,      description: "Sow into the Kingdom harvest" },
 ];
 
 export default function About() {
   return (
     <div className="relative min-h-screen py-20">
       <PageBackground imageUrl={BG} />
-      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
         <SectionHeading title="About" subtitle="Kingdom Mandate Ministry" />
 
         {/* Mission panel */}
@@ -43,7 +58,7 @@ export default function About() {
         </motion.div>
 
         {/* Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {links.map((link, i) => {
             const Icon = link.icon;
             return (
@@ -73,7 +88,7 @@ export default function About() {
                         style={{ color: "#f0c040", textShadow: "0 0 12px rgba(212,160,48,0.55)" }}>
                         {link.label}
                       </h3>
-                      <p className="font-body text-xs" style={{ color: "rgba(185,155,105,0.68)" }}>
+                      <p className="font-body text-xs" style={{ color: "rgba(225,195,150,0.88)" }}>
                         {link.description}
                       </p>
                     </div>
@@ -92,11 +107,11 @@ export default function About() {
               display: "block", margin: "0 auto 14px",
               filter: "drop-shadow(0 0 16px rgba(212,160,48,0.65))",
             }} />
-            <p className="font-body text-sm leading-relaxed mb-5" style={{ color: "rgba(205,172,125,0.85)" }}>
+            <p className="font-body text-sm leading-relaxed mb-5" style={{ color: "rgba(230,200,155,0.92)" }}>
               Prayer is freely offered. If this ministry has blessed you and you feel led to support the work,
               you may sow into Kingdom Mandate Ministry.
             </p>
-            <a href="https://kingdommandateministry.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.paypal.com/donate/?business=kingdommm.chris%40gmail.com" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="font-heading text-sm"
                 style={{ border: "1px solid rgba(212,160,48,0.48)", color: "#d4a030", boxShadow: "0 0 18px rgba(212,160,48,0.18)" }}>
                 <Heart className="w-4 h-4 mr-2" />

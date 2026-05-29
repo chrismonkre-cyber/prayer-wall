@@ -19,7 +19,7 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0000]/85 backdrop-blur-xl border-b border-primary/10 shadow-[0_1px_20px_rgba(212,160,48,0.06)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1a0808]/75 backdrop-blur-xl border-b border-primary/20 shadow-[0_1px_20px_rgba(212,160,48,0.10)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
@@ -50,8 +50,8 @@ export default function Navbar() {
                 to={link.path}
                 className={`px-3 py-2 rounded-lg text-xs font-body tracking-wide transition-all duration-200 ${
                   location.pathname === link.path
-                    ? "text-primary bg-primary/12 shadow-[0_0_12px_rgba(212,160,48,0.15)]"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/8"
+                    ? "text-[#ffeebb] bg-primary/15 shadow-[0_0_18px_rgba(242,201,76,0.35)]"
+                    : "text-[#f0d896] hover:text-[#ffeebb] hover:bg-primary/10"
                 }`}
               >
                 {link.label}
@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-[#0a0000]/95 backdrop-blur-xl border-b border-primary/10">
+        <div className="lg:hidden bg-[#1a0808]/85 backdrop-blur-xl border-b border-primary/20">
           <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
@@ -82,8 +82,8 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={`block px-4 py-3 rounded-lg text-sm font-body transition-all duration-200 ${
                   location.pathname === link.path
-                    ? "text-primary bg-primary/12 shadow-[0_0_10px_rgba(212,160,48,0.12)]"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/8"
+                    ? "text-[#ffeebb] bg-primary/15 shadow-[0_0_14px_rgba(242,201,76,0.30)]"
+                    : "text-[#f0d896] hover:text-[#ffeebb] hover:bg-primary/10"
                 }`}
               >
                 {link.label}

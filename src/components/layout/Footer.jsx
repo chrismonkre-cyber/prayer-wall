@@ -1,11 +1,25 @@
 import React from "react";
-import { Crown } from "lucide-react";
 
 const footerLinks = [
   { label: "Main Site", href: "https://kingdommandateministry.com" },
   { label: "Bible Companion", href: "https://thebiblecompanion.online" },
+  { label: "Prayer Wall", href: "https://prayer.kingdommandateministry.com" },
+  { label: "Kingdom Fire", href: "https://fire.kingdommandateministry.com" },
+  { label: "Kingdom Pathway", href: "https://pathway.kingdommandateministry.com" },
+  { label: "Kingdom Declarations", href: "https://declarations.kingdommandateministry.com" },
+  { label: "Kingdom Healing Room", href: "https://healing.kingdommandateministry.com" },
+  { label: "Kingdom Purpose Finder", href: "https://purpose.kingdommandateministry.com" },
+  { label: "Kingdom Identity", href: "https://identity.kingdommandateministry.com" },
+  { label: "Kingdom Gift Finder", href: "https://gifts.kingdommandateministry.com" },
+  { label: "Kingdom Battle Plan", href: "https://battle.kingdommandateministry.com" },
+  { label: "Kingdom Grace Vault", href: "https://grace.kingdommandateministry.com" },
+  { label: "Kingdom Revival Fire", href: "https://revival.kingdommandateministry.com" },
+  { label: "Kingdom Family Altar", href: "https://family.kingdommandateministry.com" },
+  { label: "Kingdom Marketplace Mandate", href: "https://marketplace.kingdommandateministry.com" },
+  { label: "Kingdom Freedom", href: "https://freedom.kingdommandateministry.com" },
   { label: "YouTube", href: "https://www.youtube.com/@KingdomMandateMinistry" },
   { label: "Contact", href: "mailto:kingdommm.chris@gmail.com" },
+  { label: "Partner / Sow", href: "https://www.paypal.com/donate/?business=kingdommm.chris%40gmail.com" },
 ];
 
 export default function Footer() {
@@ -13,8 +27,8 @@ export default function Footer() {
     <footer
       style={{
         position: "relative",
-        borderTop: "1px solid rgba(212,160,48,0.18)",
-        background: "rgba(4,0,1,0.88)",
+        borderTop: "1px solid rgba(212,160,48,0.25)",
+        background: "linear-gradient(180deg, rgba(10,2,4,0.85) 0%, rgba(4,0,1,0.90) 100%)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         overflow: "hidden",
@@ -27,30 +41,23 @@ export default function Footer() {
         background: "linear-gradient(to right, transparent, rgba(242,201,76,0.60), transparent)",
       }} />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-7">
-        <div className="flex flex-col items-center text-center gap-3">
-          <Crown
-            style={{
-              width: "22px", height: "22px",
-              color: "#d4a030",
-              filter: "drop-shadow(0 0 8px rgba(212,160,48,0.55))",
-            }}
-          />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div className="flex flex-col items-center text-center gap-5">
 
-          <div className="flex flex-wrap justify-center gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-2 w-full justify-items-center">
             {footerLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-xs tracking-wide transition-colors duration-200"
+                className="font-body text-xs tracking-wide transition-colors duration-200 hover:underline"
                 style={{
-                  color: "rgba(212,160,48,0.68)",
+                  color: "#d4a860",
                   textShadow: "0 1px 4px rgba(0,0,0,0.60)",
                 }}
                 onMouseEnter={e => e.currentTarget.style.color = "#f2c94c"}
-                onMouseLeave={e => e.currentTarget.style.color = "rgba(212,160,48,0.68)"}
+                onMouseLeave={e => e.currentTarget.style.color = "#d4a860"}
               >
                 {link.label}
               </a>
@@ -66,11 +73,11 @@ export default function Footer() {
           <p
             className="font-body text-xs tracking-wide"
             style={{
-              color: "rgba(212,160,48,0.55)",
+              color: "#d4a860",
               textShadow: "0 1px 4px rgba(0,0,0,0.70)",
             }}
           >
-            © 2026 Kingdom Mandate Ministry | Built by the Glory of GOD, for the Grace of GOD
+            © 2026 Kingdom Mandate Ministry | Built for the Glory of GOD, by the Grace of GOD
           </p>
         </div>
       </div>

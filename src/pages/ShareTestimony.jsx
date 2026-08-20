@@ -125,7 +125,7 @@ export default function ShareTestimony() {
 
             <div className="flex items-start space-x-3">
               <Checkbox id="permission" checked={form.permission_to_share} onCheckedChange={(v) => setForm({ ...form, permission_to_share: v })} />
-              <Label htmlFor="permission" className="font-body text-xs cursor-pointer" style={{ color: "rgba(185,155,105,0.72)" }}>
+              <Label htmlFor="permission" className="font-body text-xs cursor-pointer" style={{ color: "rgba(255,255,255,0.90)" }}>
                 You may share this testimony publicly after review.
               </Label>
             </div>

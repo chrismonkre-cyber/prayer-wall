@@ -59,8 +59,8 @@ export default function ScriptureQuote({ text, reference }) {
         marginBottom: "10px",
       }}>"</div>
 
-      <p className="relative font-body text-sm sm:text-base leading-relaxed italic"
-        style={{ color: "rgba(240,210,150,0.92)", textShadow: "0 1px 8px rgba(0,0,0,0.50)" }}>
+      <p className="relative font-body text-base text-white leading-relaxed italic"
+  style={{ textShadow: "0 1px 8px rgba(0,0,0,0.50)" }}>
         {text}
       </p>
 

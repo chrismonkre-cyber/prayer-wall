@@ -92,14 +92,12 @@ function EncouragementCard({ card, index }) {
           borderRadius: "10px", padding: "12px 14px", marginBottom: "14px",
           boxShadow: "inset 0 1px 0 rgba(212,160,48,0.14)",
         }}>
-          <p className="font-body text-xs sm:text-sm italic leading-relaxed"
-            style={{ color: "rgba(235,205,150,0.92)" }}>
+          <p className="font-body text-base text-white italic leading-relaxed">
             {card.scripture}
           </p>
         </div>
 
-        <p className="font-body text-sm leading-relaxed mb-4"
-          style={{ color: "rgba(218,188,148,0.88)" }}>
+        <p className="font-body text-base text-white leading-relaxed mb-4">
           {card.encouragement}
         </p>
 
@@ -110,8 +108,7 @@ function EncouragementCard({ card, index }) {
           borderRadius: "10px", padding: "14px",
           boxShadow: "inset 0 1px 0 rgba(212,160,48,0.10), 0 0 20px rgba(180,60,10,0.08)",
         }}>
-          <p className="font-body text-sm italic leading-relaxed"
-            style={{ color: "rgba(205,172,125,0.85)" }}>
+          <p className="font-body text-base text-white italic leading-relaxed">
             {card.prayer}
           </p>
         </div>

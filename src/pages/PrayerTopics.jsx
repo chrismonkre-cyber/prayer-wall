@@ -44,12 +44,11 @@ function TopicCard({ topic, index }) {
               style={{ color: "#f0c040", textShadow: "0 0 14px rgba(212,160,48,0.58)" }}>
               {topic.title}
             </h3>
-            <p className="font-body text-xs" style={{ color: "rgba(212,160,48,0.58)" }}>{topic.scripture}</p>
+            <p className="font-body text-base" style={{ color: "#f0c040" }}>{topic.scripture}</p>
           </div>
         </div>
 
-        <p className="font-body text-sm leading-relaxed mb-3"
-          style={{ color: "rgba(218,188,148,0.88)" }}>
+        <p className="font-body text-base leading-relaxed mb-3 text-white">
           {topic.encouragement}
         </p>
 
@@ -58,8 +57,7 @@ function TopicCard({ topic, index }) {
           borderRadius: "10px", padding: "14px",
           boxShadow: "inset 0 1px 0 rgba(212,160,48,0.10), 0 0 18px rgba(160,50,8,0.08)",
         }}>
-          <p className="font-body text-sm italic leading-relaxed"
-            style={{ color: "rgba(205,172,125,0.85)" }}>
+          <p className="font-body text-base italic leading-relaxed text-white">
             {topic.prayer}
           </p>
         </div>

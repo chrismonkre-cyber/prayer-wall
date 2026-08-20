@@ -125,7 +125,7 @@ export default function PrayerCard({ prayer, index }) {
 
         <div className="relative flex items-center justify-between pt-3"
           style={{ borderTop: "1px solid rgba(212,160,48,0.18)" }}>
-          <div className="flex items-center gap-1.5" style={{ color: "#ffffff" }}}
+          <div className="flex items-center gap-1.5" style={{ color: "#ffffff" }}
             <Clock style={{ width: "13px", height: "13px" }} />
             <span className="font-body text-sm">
               {prayer.created_date ? format(new Date(prayer.created_date), "MMM d, yyyy") : "Recently"}

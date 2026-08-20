@@ -112,20 +112,20 @@ export default function PrayerCard({ prayer, index }) {
           </span>
         </div>
 
-        <p className="font-body text-base text-white leading-relaxed mb-4">
+        <p className="font-body text-base leading-relaxed mb-4" style={{ color: "#ffffff" }}>
           {prayer.request_text}
         </p>
 
         <div className="relative flex items-center gap-2 mb-4">
           <div style={{ width: "30px", height: "1px", background: "rgba(212,160,48,0.40)" }} />
-          <p className="font-body text-sm text-white/85 italic">
+          <p className="font-body text-sm italic" style={{ color: "#ffffff" }}>
             {encouragement}
           </p>
         </div>
 
         <div className="relative flex items-center justify-between pt-3"
           style={{ borderTop: "1px solid rgba(212,160,48,0.18)" }}>
-          <div className="flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.80)" }}
+          <div className="flex items-center gap-1.5" style={{ color: "#ffffff" }}}
             <Clock style={{ width: "13px", height: "13px" }} />
             <span className="font-body text-sm">
               {prayer.created_date ? format(new Date(prayer.created_date), "MMM d, yyyy") : "Recently"}
@@ -136,7 +136,8 @@ export default function PrayerCard({ prayer, index }) {
             className="gap-1.5 font-body text-sm transition-all duration-200"
             style={hasPrayed
               ? { color: "#d4a030", textShadow: "0 0 16px rgba(212,160,48,0.55)" }
-              : { color: "rgba(255,255,255,0.85)" }
+              : { color: "#ffffff" }
+              
             }
           >
             <Heart style={{ width: "15px", height: "15px", fill: hasPrayed ? "#d4a030" : "none", color: hasPrayed ? "#d4a030" : "inherit", transition: "all 0.2s" }} />

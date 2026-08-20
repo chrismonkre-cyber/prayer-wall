@@ -129,9 +129,10 @@ export default function PrayerWall() {
                   animation: "catBtnGlow 3s ease-in-out infinite",
                   cursor: "pointer",
                 } : {
-                  background: "rgba(10,2,2,0.75)",
-                  color: "rgba(212,160,48,0.82)",
-                  border: "1px solid rgba(212,160,48,0.28)",
+                  background: "rgba(28,8,6,0.92)",
+color: "rgba(240,192,64,1)",
+border: "1px solid rgba(212,160,48,0.55)",
+fontWeight: "600",
                   borderRadius: "8px",
                   padding: "7px 15px",
                   cursor: "pointer",
